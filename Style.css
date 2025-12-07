@@ -1,6 +1,6 @@
 body {
     background-color: white;
-    margin: 0;              /* не 0 auto, просто 0 */
+    margin: 0;
     font-family: Arial, sans-serif;
     align-content: center;
 }
@@ -18,7 +18,7 @@ header .navbar {
 }
 
 header .navbar img {
-    width: 4vh;   /* нужен ; */
+    width: 4vh;
 }
 
 header .navbar nav {
@@ -44,7 +44,10 @@ header .navbar .title {
     text-shadow: 1px 1px 3px black;
 }
 
+/* Главная карточка */
+
 .main-content {
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,19 +57,19 @@ header .navbar .title {
     margin-top: 50px;
     background-color: red;
     border-radius: 10px;
-    box-shadow: 0 0 10px black;
-    text-shadow: 0 1px 0 darkred;
+    box-shadow: 0 0 10px #000000;
+    text-shadow: 0 3px 0 darkred;
 }
 
 .main-content a {
     background-color: black;
     padding: 5px;
-    color: red;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
     box-shadow: 0 0 10px black;
     transition: 0.3s ease-in-out;
-
+    text-shadow: none;
 }
 
 .main-content a:hover {
@@ -75,53 +78,109 @@ header .navbar .title {
     color: black;
 }
 
+/* Отзывы */
+
 .reviews {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
 
-    width: 90%;                 /* нормальная ширина */
-    margin: 20px auto;            /* центрирование */
-    background: white;            /* фон карты */
-    border-radius: 10px;          /* скругление */
-    overflow: hidden;             /* чтобы картинка тоже скруглилась */
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: 0.3s;
+    text-align: center;
 }
 
-.reviews:hover {
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-}
-
-.review img {
+.card img {
     width: 100%;
-    display: block;               /* убирает белую линию снизу */
+    display: block;
 }
 
-.review .container {
+.card .container {
     padding: 10px 16px;
 }
 
-.page-content h1 {
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Страницы (Store и др.) */
+
+.page-content {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 16px 40px;
+}
+
+.page-title {
     display: flex;
     justify-content: center;
     text-shadow: 0 1px 0 black;
-
+    margin-bottom: 24px;
 }
+
+/* Футер */
 
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 16px 0;
 }
+
+/* Магазин */
+
+.store-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Карточка товара */
 
 .product-item {
     background: #fff;
     border: 2px solid red;
     border-radius: 10px;
     padding: 15px;
-    margin: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
+.product-image {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
 
+.product-name {
+    margin: 0 0 8px 0;
+}
 
+.product-description {
+    margin: 0 0 10px 0;
+}
+
+.product-price {
+    margin: 0 0 6px 0;
+    font-weight: 600;
+}
+
+.product-stock {
+    margin: 0;
+}
